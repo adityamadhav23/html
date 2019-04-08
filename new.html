@@ -1,0 +1,201 @@
+html>
+<head>
+<title>Register Form</title>
+<script type="text/javascript">
+function validation()
+{   
+    var name=document.forms["RegForm"]["Name"].value;
+    if(name.length<3 || name.length>10)
+    {
+    alert("Please enter your name within the required size");
+    name.focus();
+    return false;
+    }
+
+    if(name =="")
+    {
+        alert("Please enter your name.");
+        name.focus();
+        return false;
+        }
+    else
+    {
+    for(i=0;i<name.length;i++)
+    {
+        if(!((name.charAt(i)>='a' && name.charAt(i)<='z') || (name.charAt(i)>='A' && name.charAt(i)<='z')))
+        {
+        alert("Please enter only alphabets in name field");
+        name.focus();
+        return false;
+    }
+    }
+    }
+var age=document.forms["RegForm"]["age"].value;
+    if(age =="")
+    {
+        alert("Please enter your age.");
+        age.focus();
+        return false;
+        }
+else if(age<20 || age>80)
+    {
+    alert("Please enter a valid age");
+    age.focus();
+    return false;
+    }
+var email=document.forms["RegForm"]["Email"].value;
+    if(email =="")
+    {
+        alert("Please enter your email.");
+        email.focus();
+        return false;
+        }
+
+
+
+
+
+var password=document.forms["RegForm"]["pass1"].value;
+    if(password =="")
+    {
+        alert("Please enter your password.");
+        pass1.focus();
+        return false;
+        }
+    else if(password.length<9)
+    {
+    alert("Password is too short");
+    return false;
+    }
+var address=document.forms["RegForm"]["address"].value;
+    if(address =="")
+    {
+        alert("Please enter your address.");
+        address.focus();
+        return false;
+        }
+    else if(address.length>15)
+    {
+    alert("Please enter address in required size.");
+    address.focus();
+    return false;
+    }
+var conf=document.forms["RegForm"]["pass2"].value;
+    if(conf =="")
+    {
+        alert("Please confirm your password.");
+        conf.focus();
+        return false;
+        }
+    if(conf==password)
+    {
+        alert("Passwords match");
+        }
+    else if(conf!=password)
+    {
+    alert("Passwords do not match");
+    }
+var gender=document.forms["RegForm"]["gender"].value;
+    if(gender =="")
+    {
+        alert("Please select your gender.");
+        name.focus();
+        return false;
+        }
+var uid=document.forms["RegForm"]["email1"].value;
+
+var mob=document.forms["RegForm"]["Mobile"].value;
+    if(mob =="")
+    {
+        alert("Please enter your mobile number.");
+        mob.focus();
+        return false;
+        }
+    else if(mob.length!=10)
+    {
+    alert("Please enter 10 digits.");
+    mob.focus;
+    return false;
+    }
+}
+    </script>
+</head>
+<body>
+<form name="RegForm" action="/submit.php" onsubmit="return validation()" method="post">
+<center><table border="0" bgcolor="lightblue">
+<tr>
+    <td>Name :</td>
+    <td><input type="text" name="Name" min="3" max="10"/></td>
+</tr>
+<tr>
+    <td>Age :</td>
+    <td><input type="text" name="age" max="100" /></td>
+</tr>
+<tr>
+    <td>Gender :</td>
+    <td><input type="radio" name="gender" value="Male" focused>Male</input>
+        <input type="radio" name="gender" value="Female"  >Female</input>
+    <input type="radio" name="gender" value="other" >Other</input></td>
+</tr>
+<tr>
+    <td>Year of birth :</td>
+    <td><input type="int" name="Dob" max="4"  /></td>
+</tr>
+
+<tr>
+    <td>Address :</td>
+    <td><textarea name="address" cols="30" row="3" max="15"></textarea></td>
+</tr>
+<tr>
+    <td>Mobile :</td>
+    <td><input type="long" name="Mobile" max="10" /></td>
+</tr>
+<tr>
+    <td>State :</td>
+    <td><select  name="state">
+        <option value="0" selected>Karnataka</option>
+        <option value="1">Kerala</option>
+        <option value="2">Andra Pradesh</option>               
+        <option value="3">Tamil nadu</option>       
+        <option value="3">Maharashtra</option> 
+    <option value="3">Rajasthan</option> 
+    </select>
+        </td>
+</tr>
+<tr>
+    <td>E-mail Id:</td>
+    <td><input type="email"  name="Email" /></td>
+</tr>
+<tr>
+    <td>UID:</td>
+    <td><input type="email"  name="email1"/></td>
+</tr>
+<tr>
+    <td align="top">Password:</td>
+    <td align="bottom"><input type="password"  name="pass1" /></td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+    <p>* Should be greater than 8 Character.<br/>*atleast one number.<br/>* special character should be included</p><p id="strong"></p>
+</td>
+</tr><tr>
+    <td>Confirm Password:</td>
+    <td><input type="password"  name="pass2" /></td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+<tr>
+</tr>
+    <td align="center"><input type="submit" name="submit" value="Submit" /></td>
+    <td align="center"><button type="reset"/>Reset</td>
+</tr>
+</table></center></form>
+</body>
+</html>
